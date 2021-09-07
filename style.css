@@ -1,0 +1,162 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: sans-serif;
+    background-color: powderblue;
+    overflow: hidden;
+}
+
+/* Book */
+.book {
+    position: relative;
+    width: 600px;
+    height: 650px;
+    transition: transform 0.5s;
+}
+
+.paper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    perspective: 1500px;
+
+}
+
+.front,
+.back {
+    background-color: white;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform-origin: left;
+    transition: transform 0.5s;
+    object-fit: cover;
+}
+
+.front {
+    z-index: 1;
+    backface-visibility: hidden;
+    border-left: 3px solid powderblue;
+}
+
+.back {
+    z-index: 0;
+}
+
+.front-content,
+.back-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.back-content {
+    transform: rotateY(180deg)
+}
+
+/*Paper-flip*/
+.flipped .front,
+.flipped .back {
+    transform: rotateY(-180deg);
+}
+
+button {
+    border: none;
+    position: absolute;
+    background-color: transparent;
+    cursor: pointer;
+    margin: 10px;
+    transition: transform 0.5s;
+}
+
+button:focus {
+    outline: none;
+}
+
+button:hover i {
+    color: #636363;
+}
+
+i {
+    font-size: 50px;
+    color: gray;
+}
+
+/* Paper-stack order */
+#p1 {
+    z-index: 14;
+}
+
+#p2 {
+    z-index: 13;
+}
+
+#p3 {
+    z-index: 12;
+}
+
+#p4 {
+    z-index: 11;
+}
+
+#p5 {
+    z-index: 10;
+}
+
+#p6 {
+    z-index: 9;
+}
+#p7 {
+    z-index: 8;
+}
+#p8 {
+    z-index: 7;
+}
+
+#p9 {
+    z-index: 6;
+}
+
+#p10 {
+    z-index: 5;
+}
+
+#p11 {
+    z-index: 4;
+}
+
+#p12 {
+    z-index: 3;
+}
+
+#p13 {
+    z-index: 2;
+}
+
+#p14 {
+    z-index: 1;
+}
+
+#prev-btn{
+   left: 0px;
+   margin-left: 15%;
+}
+#next-btn{
+    right: 0px;
+    margin-right: 15%;
+}
